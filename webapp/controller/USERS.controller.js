@@ -105,8 +105,31 @@ sap.ui.define([
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.navTo("RouteInsert");
         },
+        onDeletePress: function () {
+            if (this.oSelectedItem) {
+                var oModel = this.getView().getModel();
+                var sPath = this.oSelectedItem.getBindingContext().getPath();
 
+                // Delete the selected row from the backend
+                oModel.remove(sPath, {
+                    success: function () {
+                        MessageToast.show("Delete successful");
+                    },
+                    error: function (oError) {
+                        console.error("Delete failed", oError);
+                        MessageToast.show("Delete failed");
+                    }
+                });
 
+                // Remove the selected row from the table
+                this.oSelectedItem.getParent().removeItem(this.oSelectedItem);
+                this.oSelectedItem = null;
+
+                // Disable edit and delete buttons
+                this.getView().byId("editButton").setEnabled(false);
+                this.getView().byId("deleteButton").setEnabled(false);
+            }
+        },
         _toggleButtons: function (bEdit) {
             this.getView().byId("editButton").setVisible(!bEdit);
             this.getView().byId("saveButton").setVisible(bEdit);

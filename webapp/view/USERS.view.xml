@@ -6,6 +6,7 @@
                 <Button id="saveButton" text="Save" visible="false" press="onSavePress"/>
                 <Button id="cancelButton" text="Cancel" visible="false" press="onCancelPress"/>
                 <Button id="insertButton" text="Insert" press="onInsertPress"/>
+                <Button id="deleteButton" text="Delete" enabled="false" press="onDeletePress"/>
             </Toolbar>
         </HeaderContainer>
         <Table id="dataTable" items="{/Zet_test_Set}" mode="SingleSelectLeft" selectionChange="onSelectionChange">
