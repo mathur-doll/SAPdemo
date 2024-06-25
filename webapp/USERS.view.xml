@@ -1,0 +1,38 @@
+<mvc:View controllerName="project1.controller.USERS" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <HeaderContainer>
+            <Toolbar>
+                <Button id="editButton" text="Edit" enabled="false" press="onEditPress"/>
+                <Button id="insertButton" text="Insert" press="onInsertPress"/>
+                <Button id="saveButton" text="Save" visible="false" press="onSavePress"/>
+                <Button id="cancelButton" text="Cancel" visible="false" press="onCancelPress"/>
+            </Toolbar>
+        </HeaderContainer>
+        <Table id="dataTable" items="{/Zet_test_Set}" mode="SingleSelectLeft" selectionChange="onSelectionChange">
+            <columns>
+                <Column><Text text="Codice" /></Column>
+                <Column><Text text="Nome" /></Column>
+                <Column><Text text="Cognome" /></Column>
+                <Column><Text text="DatNascita" /></Column>
+                <Column><Text text="Sesso" /></Column>
+                <Column><Text text="Corso" /></Column>
+                <Column><Text text="Voto" /></Column>
+                <Column><Text text="Lode" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Navigation" press="onEditPress">
+                    <cells>
+                        <Text text="{Codice}" />
+                        <Text text="{Nome}" />
+                        <Text text="{Cognome}" />
+                        <Text text="{DatNascita}" />
+                        <Text text="{Sesso}" />
+                        <Text text="{Corso}" />
+                        <Text text="{Voto}" />
+                        <Text text="{Lode}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

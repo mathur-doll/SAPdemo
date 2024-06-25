@@ -1,0 +1,50 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.Insert">
+    <Page id="insertPage" title="Insert Data">
+        <content>
+         
+        <VBox id="insertFormContainer" visible="true">
+        <FlexBox justifyContent="SpaceBetween" wrap="Wrap">
+            <VBox>
+                <Label text="Codice" />
+                <Input id="newCodice" />
+            </VBox>
+            <VBox>
+                <Label text="Nome" />
+                <Input id="newNome" />
+            </VBox>
+            <VBox>
+                <Label text="Cognome" />
+                <Input id="newCognome" />
+            </VBox>
+            <VBox>
+                <Label text="DatNascita" />
+                <Input id="newDatNascita" />
+            </VBox>
+            <VBox>
+                <Label text="Sesso" />
+                <Input id="newSesso" />
+            </VBox>
+            <VBox>
+                <Label text="Corso" />
+                <Input id="newCorso" />
+            </VBox>
+            <VBox>
+                <Label text="Voto" />
+                <Input id="newVoto" />
+            </VBox>
+            <VBox>
+                <Label text="Lode" />
+                <CheckBox id="newLode" />
+            </VBox>
+            </FlexBox>
+            <FlexBox justifyContent="Center" alignItems="Center" width="100%" direction="Row">
+            <Button id="insertsavebutton" text="Save" press="onInsertSavePress" />
+            <Button id="insertcancelbutton" text="Cancel"  press="onNavBack"/>
+            <Button id= "backbutton" text="Back" press="onNavBack" />
+            </FlexBox>
+        </VBox>
+            
+        </content>
+    </Page>
+</mvc:View>
